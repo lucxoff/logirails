@@ -24,7 +24,7 @@
             <div class="post-tags">
                 <ul>
                     <% @article.tags.each do |tag| %>
-                        <a href="#"><li class="tag"><%= tag.name %></li></a>
+                        <a href="/articles/tags/<%= tag.id %>"><li class="tag"><%= tag.name %></li></a>
                     <% end %>
                 </ul>
             </div>

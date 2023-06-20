@@ -1,7 +1,8 @@
 class TagController < ApplicationController
 
     def show
-        @articles = Article.all.where(tag: params[:id])
+        @tag = Tag.find(params[:id])
+        @articles = @tag.articles
     end
 
 end

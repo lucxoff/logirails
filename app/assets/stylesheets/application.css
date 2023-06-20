@@ -23,7 +23,10 @@
 /** Layout CSS **/
 @import "layout/application";
 @import "layout/global";
+@import "layout/devise";
 
 /** Pages **/
 @import "pages/home";
-@import "pages/article"
+@import "pages/article";
+@import "pages/tag";
+@import "pages/devise/login"

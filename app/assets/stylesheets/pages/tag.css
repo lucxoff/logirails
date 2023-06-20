@@ -1,0 +1,19 @@
+.tag.posts .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+    margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    .tag.posts .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 32px;
+        grid-row-gap: 32px;
+        margin-top: 2rem;
+    }
+}

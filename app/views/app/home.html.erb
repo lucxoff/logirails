@@ -2,6 +2,9 @@
   Logirails
 <% end %>
 
+<% if user_signed_in? %> 
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+<% end %>
 
 <div class="home">
     <div class="header">
@@ -38,7 +41,7 @@
                 <div class="post-tags">
                     <ul>
                         <% @featured.tags.each do |tag| %>
-                            <a href="#"><li class="tag"><%= tag.name %></li></a>
+                            <a href="/articles/tags/<%= tag.id %>"><li class="tag"><%= tag.name %></li></a>
                         <% end %>
                     </ul>
                 </div>
@@ -79,7 +82,7 @@
                     <div class="post-tags">
                         <ul>
                             <% article.tags.each do |tag| %>
-                                <a href="#"><li class="tag"><%= tag.name %></li></a>
+                                <a href="/articles/tags/<%= tag.id %>"><li class="tag"><%= tag.name %></li></a>
                             <% end %>
                         </ul>
                     </div>

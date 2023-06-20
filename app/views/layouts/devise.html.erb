@@ -13,15 +13,20 @@
   </head>
 
   <body>
-    <%= render "partials/header", tags: tags %>
-    <p class="notice"><%= notice %></p> 
-    <p class="alert"><%= alert %></p>
-    <div class="container">
-      <%= yield %>
-    </div>
     
     <div class="gradient-block"></div>
-    <%= render "partials/footer" %>
+    <p class="notice"><%= notice %></p> 
+    <p class="alert"><%= alert %></p>
+    
+    <div class="devise-container">
+        <div class="devise-image">
+            <img src="https://loremflickr.com/1920/1080/paysage" alt="Devise image" />
+        </div>
+        <div class="devise-content">
+            <%= yield %>
+        </div>
+    </div>
+    
 
   </body>
 </html>

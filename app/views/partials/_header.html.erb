@@ -8,11 +8,10 @@
         <ul class="menu">
             <li><a href="<%= root_path %>">Home</a></li>
             <% tags.each do |tag| %>
-                <li><a href="#"><%= tag.name %></a></li>
+                <li><a href="/articles/tags/<%= tag.id %>"><%= tag.name %></a></li>
             <% end %>
          
-            <li><a href="#">About</a></li>
         </ul>
-        <a href="#"><button>Contact</button></a>
+        <a href="/contact"><button>Contact</button></a>
     </nav>
 </header>
