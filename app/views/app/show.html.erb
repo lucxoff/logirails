@@ -1,1 +1,34 @@
-Article
+<% content_for :title do %>
+  <%= @article.title %>
+<% end %>
+
+<div class="article">
+    <article class="post">
+
+        <h1 class="post-title"><%= @article.title %></h1>
+
+        <div class="post-image">
+            <img src="<%= @article.image_url %>" alt="Article image">
+        </div>
+        <div class="post-head">
+            <div class="post-infos">
+                <div>
+                    <span><a href="#">John Doe</a>・<time><%= @article.created_at.strftime("%d %b, %Y  %I:%M %P") %></time></span>
+                </div>           
+            </div>
+
+            <div class="post-shortdesc">
+                <p><%= @article.shortdesc %></p>
+            </div>
+            
+            <div class="post-tags">
+                <ul>
+                    <% @article.tags.each do |tag| %>
+                        <a href="#"><li class="tag"><%= tag.name %></li></a>
+                    <% end %>
+                </ul>
+            </div>
+            
+        </div>
+    </article>
+</div>

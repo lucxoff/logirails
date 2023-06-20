@@ -1,0 +1,21 @@
+.article .post {
+    margin: 4rem 0;
+}
+
+.article .post .post-title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+/* Responsiveness */
+@media (min-width: 768px) {
+
+    .article .post .post-image img {
+        height: 40rem;
+    }
+
+}

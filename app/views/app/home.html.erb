@@ -1,3 +1,8 @@
+<% content_for :title do %>
+  Logirails
+<% end %>
+
+
 <div class="home">
     <div class="header">
         <h1 class="title">Navigating the world of News</h1>
@@ -6,18 +11,18 @@
 
     <div class="featured-post">
         <h2>Featured Post</h2>
-        <div class="post">
+        <div class="post featured">
             <div class="post-image">
-                <a href="/article"><img src="https://loremflickr.com/1920/920/picture" alt="Article image"></a>
+                <a href="/articles/<%= @featured.id %>"><img src="<%= @featured.image_url %>" alt="Article image"></a>
             </div>
             <div class="post-head">
                 <div class="post-infos">
                     <div>
-                        <span><a href="#">John Doe</a>・<time>12 Jan, 2018</time></span>
-                        <h3 class="post-title"><a href="/article">What is Lorem Ipsum?</a></h3>
+                        <span><a href="#">John Doe</a>・<time><%= @featured.created_at.strftime("%d %b, %Y  %I:%M %P") %></time></span>
+                        <h3 class="post-title"><a href="/articles/<%= @featured.id %>"><%= @featured.title %></a></h3>
                     </div>           
                     <div>
-                        <a href="/article">
+                        <a href="/articles/<%= @featured.id %>">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="post-svg-link">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
                             </svg>
@@ -26,15 +31,15 @@
                 </div>
 
                 <div class="post-shortdesc">
-                    <a href="/article"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicin et sed do eiusmod tempor incididunt a ...</p>
+                    <a href="/articles/<%= @featured.id %>"><p><%= @featured.shortdesc %></p>
                     </a>
                 </div>
                 
                 <div class="post-tags">
                     <ul>
-                        <a href="#"><li class="tag">AI</li></a>
-                        <a href="#"><li class="tag">Computer</li></a> 
-                        <a href="#"><li class="tag">Tech</li></a>
+                        <% @featured.tags.each do |tag| %>
+                            <a href="#"><li class="tag"><%= tag.name %></li></a>
+                        <% end %>
                     </ul>
                 </div>
                 
@@ -45,18 +50,20 @@
     <div class="posts">
         <h2>Recent Posts</h2>
         <div class="grid">
+
+            <% @articles.each do |article| %>
             <div class="post">
                 <div class="post-image">
-                    <a href="/article"><img src="https://loremflickr.com/1920/920/computer" alt="Article image"></a>
+                    <a href="/articles/<%= article.id %>"><img src="<%= article.image_url %>" alt="Article image"></a>
                 </div>
                 <div class="post-head">
                     <div class="post-infos">
                         <div>
-                            <span><a href="#">John Doe</a>・<time>12 Jan, 2018</time></span>
-                            <h3 class="post-title"><a href="/article">What is Lorem Ipsum?</a></h3>
+                            <span><a href="#">John Doe</a>・<time><%= article.created_at.strftime("%d %b, %Y  %I:%M %P") %></time></span>
+                            <h3 class="post-title"><a href="/articles/<%= article.id %>"><%= article.title %></a></h3>
                         </div>           
                         <div>
-                            <a href="/article">
+                            <a href="/articles/<%= article.id %>">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="post-svg-link">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>
@@ -65,85 +72,21 @@
                     </div>
     
                     <div class="post-shortdesc">
-                        <a href="/article"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicin et sed do eiusmod tempor incididunt a ...</p>
+                        <a href="/articles/<%= article.id %>"><p><%= article.shortdesc %></p>
                         </a>
                     </div>
                     
                     <div class="post-tags">
                         <ul>
-                            <a href="#"><li class="tag">News</li></a>
-                            <a href="#"><li class="tag">Science</li></a> 
-                            <a href="#"><li class="tag">World</li></a>
+                            <% article.tags.each do |tag| %>
+                                <a href="#"><li class="tag"><%= tag.name %></li></a>
+                            <% end %>
                         </ul>
                     </div>
                     
                 </div>
             </div>
-            <div class="post">
-                <div class="post-image">
-                    <a href="/article"><img src="https://loremflickr.com/1920/920/world" alt="Article image"></a>
-                </div>
-                <div class="post-head">
-                    <div class="post-infos">
-                        <div>
-                            <span><a href="#">John Doe</a>・<time>12 Jan, 2018</time></span>
-                            <h3 class="post-title"><a href="/article">What is Lorem Ipsum?</a></h3>
-                        </div>           
-                        <div>
-                            <a href="/article">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="post-svg-link">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-    
-                    <div class="post-shortdesc">
-                        <a href="/article"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicin et sed do eiusmod tempor incididunt a ...</p>
-                        </a>
-                    </div>
-                    
-                    <div class="post-tags">
-                        <ul>
-                            <a href="#"><li class="tag">Tech</li></a>
-                        </ul>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="post">
-                <div class="post-image">
-                    <a href="/article"><img src="https://loremflickr.com/1920/920/ui" alt="Article image"></a>
-                </div>
-                <div class="post-head">
-                    <div class="post-infos">
-                        <div>
-                            <span><a href="#">John Doe</a>・<time>12 Jan, 2018</time></span>
-                            <h3 class="post-title"><a href="/article">What is Lorem Ipsum?</a></h3>
-                        </div>           
-                        <div>
-                            <a href="/article">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="post-svg-link">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-    
-                    <div class="post-shortdesc">
-                        <a href="/article"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicin et sed do eiusmod tempor incididunt a ...</p>
-                        </a>
-                    </div>
-                    
-                    <div class="post-tags">
-                        <ul>
-                            <a href="#"><li class="tag">AI</li></a>
-                            <a href="#"><li class="tag">Tech</li></a>
-                        </ul>
-                    </div>
-                    
-                </div>
-            </div>
+            <% end %>
         </div>
         
     </div>

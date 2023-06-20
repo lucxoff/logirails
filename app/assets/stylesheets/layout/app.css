@@ -134,7 +134,8 @@ header.header{
 .post .post-image img {
     border-radius: 10px;
     width: 100%;
-    height: 50%;
+    height: 20rem;
+    object-fit: cover;
 }
 
 .post .post-head {
@@ -297,6 +298,10 @@ header.header{
 
     .container {
         margin: 0px 5rem;
+    }
+
+    .post.featured .post-image img {
+        height: 40rem;
     }
 
     .footer .footer-sections {      

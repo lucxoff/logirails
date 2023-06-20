@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to:"app#home"
 
-  get "/article", to: "app#show"
+  get "/articles/:id", to: "app#show"
+  get "/articles/tags/:id", to: "tag#show"
 
 end
