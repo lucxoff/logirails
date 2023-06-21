@@ -74,6 +74,37 @@
     margin-bottom: 16px;
 }
 
+.devise-container .devise-content .back {
+    padding: 2rem;
+    text-align: center;
+}
+
+.devise-container .devise-content .back a{
+    color: blue;
+}
+
+.devise-container .devise-content .back a:hover{
+    color: lightblue;
+    text-decoration: underline;
+}
+
+.devise-alerts .message {
+    opacity: 0.9;
+    padding: 1rem;
+    border-radius: 10px;
+    color: white;
+    position: fixed;
+    right: 1rem;
+    top: 2rem;
+}
+
+.devise-alerts .alert {
+    background-color: red;
+}
+.devise-alerts .notice {
+    background-color: green;
+}
+
 /* Responsiveness */
 @media (min-width: 920px) {
 

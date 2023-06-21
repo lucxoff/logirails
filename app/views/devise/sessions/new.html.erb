@@ -1,28 +1,6 @@
-<!--<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
+<% content_for :title do %>
+  Login
 <% end %>
--->
 
 <div class="devise-login">
   <h2>Log in to your account</h2>
@@ -31,7 +9,7 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.label :email, "Email:" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "username@domain.com" %>
+      <%= f.email_field :email, autocomplete: "email", placeholder: "username@domain.com" %>
     </div>
 
     <div class="field">
@@ -51,6 +29,10 @@
       <%= render "devise/shared/links" %>
     </div>
   <% end %>
+
+  <div class="back">
+    <a href="<%= root_path %>">Back to Logirails</a>
+  </div>
   
 
 </div>

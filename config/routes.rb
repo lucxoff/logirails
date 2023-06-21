@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get "/articles/:id", to: "app#show"
   get "/articles/tags/:id", to: "tag#show"
 
+  get '/dashboard', to: "dashboard#index"
 end

@@ -15,9 +15,19 @@
   <body>
     
     <div class="gradient-block"></div>
-    <p class="notice"><%= notice %></p> 
-    <p class="alert"><%= alert %></p>
     
+    <div class="devise-alerts">
+      <% if notice %>
+        <div class="notice message">
+          <%= notice %>
+        </div>
+      <% elsif alert %>
+        <div class="alert message">
+          <%= alert %>
+        </div>
+      <% end %>
+    </div>
+
     <div class="devise-container">
         <div class="devise-image">
             <img src="https://loremflickr.com/1920/1080/paysage" alt="Devise image" />

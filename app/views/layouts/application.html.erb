@@ -14,14 +14,24 @@
 
   <body>
     <%= render "partials/header", tags: tags %>
-    <p class="notice"><%= notice %></p> 
-    <p class="alert"><%= alert %></p>
+
+    <div class="devise-alerts">
+      <% if notice %>
+        <div class="notice message">
+          <%= notice %>
+        </div>
+      <% elsif alert %>
+        <div class="alert message">
+          <%= alert %>
+        </div>
+      <% end %>
+    </div>
+    
     <div class="container">
       <%= yield %>
     </div>
     
     <div class="gradient-block"></div>
     <%= render "partials/footer" %>
-
   </body>
 </html>

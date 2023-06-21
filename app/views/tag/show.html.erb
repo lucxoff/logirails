@@ -1,5 +1,9 @@
+<% content_for :title do %>
+  Posts: <%= @tag.name %>
+<% end %>
+
 <div class="tag posts">
-    <h2>Posts: <%= "tag" %> </h2>
+    <h2>Posts: <%= @tag.name %> </h2>
     <div class="grid">
 
         <% @articles.each do |article| %>
