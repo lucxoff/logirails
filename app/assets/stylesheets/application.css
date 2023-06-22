@@ -29,4 +29,7 @@
 @import "pages/home";
 @import "pages/article";
 @import "pages/tag";
-@import "pages/devise/login"
+@import "pages/devise/login";
+@import "pages/dashboard";
+
+@import "custom"

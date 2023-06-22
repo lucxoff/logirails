@@ -2,10 +2,6 @@
   Logirails
 <% end %>
 
-<% if user_signed_in? %> 
-  <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
-<% end %>
-
 <div class="home">
     <div class="header">
         <h1 class="title">Navigating the world of News</h1>

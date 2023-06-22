@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   get "/articles/tags/:id", to: "tag#show"
 
   get '/dashboard', to: "dashboard#index"
+
+  resources :articles, path: "dashboard/articles", except: [:show, :index]
+  resources :tags, path: "dashboard/tags", except: [:show, :index]
+  
 end

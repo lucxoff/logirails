@@ -51,6 +51,11 @@ header.header{
     margin-right: 20px;
 }
 
+.nav button.dashboard-btn {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .nav button:hover {
     border-color: lightgrey;
     color: lightgray;
@@ -193,6 +198,57 @@ header.header{
     border-radius: 10px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.field input, .field textarea, .field select {
+    border: 2px solid lightblue;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.field input::placeholder, .field textarea::placeholder {
+    color: gray;
+}
+
+.field .virtual-select-wrapper {
+    width: 100%;
+}
+
+.field .vscomp-ele {
+    max-width: 100% !important;
+}
+
+.field .vscomp-toggle-button {
+    border: 2px solid lightblue;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.actions input[type="submit"] {
+    width: 100%;
+    background-color: blue;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.relative {
+    position: relative;
+}
+
 /** Footer **/
 
 .footer .footer-sections {
@@ -215,6 +271,8 @@ header.header{
     margin-top: 1rem;
     display: flex;
     width: 100%;
+    flex-direction: row;
+    gap: 0;
 }
 
 .footer .footer-sections .footer-newsletter .footer-newsletter-form input {

@@ -1,0 +1,45 @@
+<%= form_with model: article do |form| %>
+  <div class="field">
+    <%= form.label :title, "Title:" %>
+    <%= form.text_field :title %>
+    <% article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_url, "Url of image:" %>
+    <%= form.text_field :image_url %>
+    <% article.errors.full_messages_for(:image_url).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shortdesc, "Short description:" %>
+    <%= form.text_area :shortdesc %>
+    <% article.errors.full_messages_for(:shortdesc).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body, "Content:" %>
+    <%= form.text_area :body %>
+    <% article.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="field select">
+    <%= form.label :tag_ids, "Tags:" %>
+    <%= form.collection_select(:tag_ids, Tag.all, :id, :name,{:include_hidden => false}, {multiple:true}) %>
+    <% article.errors.full_messages_for(:tags_id).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

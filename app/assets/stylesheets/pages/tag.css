@@ -7,6 +7,10 @@
     margin-top: 1rem;
 }
 
+.tag.posts {
+    margin: 2rem 0;
+}
+
 @media (min-width: 768px) {
     .tag.posts .grid {
         display: grid;

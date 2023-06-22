@@ -12,6 +12,8 @@
             <% end %>
          
         </ul>
-        <a href="/contact"><button>Contact</button></a>
+        <% if user_signed_in? %> 
+            <a href="<%= dashboard_path %>"><button class="dashboard-btn">Dashboard</button></a>
+        <% end %>
     </nav>
 </header>

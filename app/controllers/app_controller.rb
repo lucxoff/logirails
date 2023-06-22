@@ -6,9 +6,13 @@ class AppController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    if Article.where(id: params[:id].to_i + 1).exists?
+      @article_after = {title: Article.find(params[:id].to_i + 1).title, url: "/articles/" + Article.find(params[:id].to_i + 1).id.to_s}
+    else
+      @article_after = nil
+    end
+    render "articles/show"
   end
 
-  def contact
-  end
   
 end

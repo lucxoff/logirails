@@ -1,2 +1,94 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<% content_for :title do %>
+  Dashboard
+<% end %>
+
+<div class="dashboard">
+    <h1>Dashboard</h1>
+
+    <div class="dashboard-articles-list">
+
+        <div class="dashboard-article-head">
+            <h2>Articles</h2>
+            <a href="<%= new_article_path %>">New Article</a>
+        </div>
+
+        <% @articles.each do |article| %> 
+            <div class="dashboard-article-item">
+                <div class="dashboard-article-item-title">
+                    <p><%= article.title %></p>
+                </div>
+                <div class="dashboard-article-item-actions">
+                    <a href="/articles/<%= article.id %>" class="dashboard-article-item-actions-a">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>  
+                    </a>
+                    <div class="relative">
+                        <button class="dashboard-item-actions-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                            </svg>
+                        </button>
+                        
+                        <div class="dashboard-item-actions-menu">
+                            <ul>
+                                <li><a href="<%= edit_article_path article %>">Edit</a></li>
+                                <li><%= link_to "Delete", article_path(article), data: {
+                                    turbo_method: :delete,
+                                    turbo_confirm: "Are you sure?"
+                                  } %></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+
+       
+        
+        
+    </div>
+
+    <div class="dashboard-tags-list">
+        <div class="dashboard-tags-head">
+            <h2>Tags</h2>
+            <a href="<%= new_tag_path %>">New tag</a>
+        </div>
+        
+        <% @tags.each do |tag| %>
+            <div class="dashboard-tag-item">
+                <div class="dashboard-tag-item-title">
+                    <p><%= tag.name %></p>
+                </div>
+                <div class="dashboard-tag-item-actions">
+                    <a href="/articles/tags/<%= tag.id %>" class="dashboard-tag-item-actions-a">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>  
+                    </a>
+
+                    <div class="relative">
+                        <button class="dashboard-item-actions-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                            </svg>
+                        </button>
+                        
+                        <div class="dashboard-item-actions-menu">
+                            <ul>
+                                <li><a href="<%= edit_tag_path tag %>">Edit</a></li>
+                                <li><%= link_to "Delete", tag_path(tag), data: {
+                                    turbo_method: :delete,
+                                    turbo_confirm: "Are you sure?"
+                                  } %></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

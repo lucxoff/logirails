@@ -11,6 +11,33 @@
     margin-bottom: 2rem;
 }
 
+.article .post .post-body {
+    margin: 1rem 0;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.article .post .post-footer {
+    padding: 2rem 0;
+}
+
+.article .post .post-footer a {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-weight: bold;
+    gap: 0.5rem;
+}
+
+.article .post .post-footer a:hover {
+    text-decoration: underline;
+}
+
+.article .post .post-footer svg {
+    height: 1rem;
+    stroke-width: 3px;
+}
+
 /* Responsiveness */
 @media (min-width: 768px) {
 
