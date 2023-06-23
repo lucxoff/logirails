@@ -1,6 +1,6 @@
 class AppController < ApplicationController
   def home
-    @featured = Article.find_by featured: true 
+    @featured = Article.all.where(featured: true)
     @articles = Article.all.where(featured: false)
   end
 

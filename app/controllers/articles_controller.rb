@@ -8,8 +8,6 @@ class ArticlesController < ApplicationController
 
     def create
         @article = Article.new(article_params)
-        @article.featured = false
-
 
         if @article.save
             redirect_to :dashboard
@@ -24,8 +22,6 @@ class ArticlesController < ApplicationController
     
     def update
         @article = Article.find(params[:id])
-        @article.featured = false
-
         if @article.update(article_params)
             redirect_to :dashboard
         else
