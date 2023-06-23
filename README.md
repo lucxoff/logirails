@@ -1,24 +1,13 @@
-# README
+# Logirails
+Logirails is a fictive blog created using Ruby On Rails to learn the framework.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
 
-Things you may want to cover:
+- Clone the repository
+- Run: `bundle install`
+- Load fixtures with `bin/rails db:seed command (or created alongside the database with db:setup)`
+- Run the dev server with: `rails s`
 
-* Ruby version
+## TODO
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This blog is not finished, some feature are in todo but not going to make it know, it's just a blog for learning the framework. You can see the todos in `TODO.md` file
