@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get "/contact", to: "app#contact"
 
-  get "/articles/:id", to: "app#show", as: "article"
+  get "/articles/:id", to: "app#show", as: "article_show"
   get "/articles/tags/:id", to: "tag#show", as: "tag"
 
   get '/dashboard', to: "dashboard#index"

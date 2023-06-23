@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
     before_action :authenticate_user!
 
     def new
-        @article = Article.new(featured: false)
+        @article = Article.new()
     end
 
     def create
